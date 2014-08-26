@@ -12,7 +12,8 @@
   // })();
 
   // FOUNDRY_HACK
-  var path = $.path + "/scripts/audio/";
+  var path = $.path + "/scripts/audio/",
+      ns = $.globalNamespace + ".audio";
 
   // ##The audiojs interface
   // This is the global object which provides an interface for creating new `audiojs` instances.
@@ -26,9 +27,9 @@
     // `$3` Cache invalidation
     flashSource: '\
       <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="$1" width="1" height="1" name="$1" style="position: absolute; left: -1px;"> \
-        <param name="movie" value="$2?playerInstance='+audiojs+'.instances[\'$1\']&datetime=$3"> \
+        <param name="movie" value="$2?playerInstance='+ns+'.instances[\'$1\']&datetime=$3"> \
         <param name="allowscriptaccess" value="always"> \
-        <embed name="$1" src="$2?playerInstance='+audiojs+'.instances[\'$1\']&datetime=$3" width="1" height="1" allowscriptaccess="always"> \
+        <embed name="$1" src="$2?playerInstance='+ns+'.instances[\'$1\']&datetime=$3" width="1" height="1" allowscriptaccess="always"> \
       </object>',
 
     // ### The main settings object
@@ -701,4 +702,4 @@
     return matches.length > 1 ? matches : matches[0];
   };
 // The global variable names are passed in here and can be changed if they conflict with anything else.
-})('audiojs', 'audiojsInstance', $);
+})('audio', 'Audio', $);
