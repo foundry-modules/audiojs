@@ -1,16 +1,12 @@
-all: modularize-script minify-script copy-swf copy-assets
+all: modularize-script minify-script create-script-folder copy-swf
 
 include ../../build/modules.mk
 
-MODULE=audiojs
-MODULARIZE_OPTIONS = -jq
+MODULE=audio
 SOURCE_SCRIPT_FILE=audiojs/audio.js
 SOURCE_SCRIPT_FOLDER=audiojs
-TARGET_STYLE_FOLDER=${FOUNDRY_STYLES_FOLDER}/audiojs
-SOURCE_STYLE_FOLDER=includes
+TARGET_SCRIPT_FOLDER=${FOUNDRY_SCRIPTS_FOLDER}/audio
 
 copy-swf:
-	rm -rf ${TARGET_SCRIPT_FOLDER}
-	mkdir -p ${TARGET_SCRIPT_FOLDER}
 	cp ${SOURCE_SCRIPT_FOLDER}/audiojs.swf ${TARGET_SCRIPT_FOLDER}/audiojs.swf
 	cp ${SOURCE_SCRIPT_FOLDER}/player-graphics.gif ${TARGET_SCRIPT_FOLDER}/player-graphics.gif
