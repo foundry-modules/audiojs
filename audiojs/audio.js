@@ -12,8 +12,8 @@
   // })();
 
   // FOUNDRY_HACK
-  var path = $.path + "/scripts/audio/",
-      ns = $.globalNamespace + ".audio";
+  var path = $.path + "/scripts/audiojs/",
+      ns = $.globalNamespace + ".audiojs";
 
   // ##The audiojs interface
   // This is the global object which provides an interface for creating new `audiojs` instances.
@@ -702,4 +702,4 @@
     return matches.length > 1 ? matches : matches[0];
   };
 // The global variable names are passed in here and can be changed if they conflict with anything else.
-})('audio', 'Audio', $);
+})('audiojs', 'audiojsInstance', $);
